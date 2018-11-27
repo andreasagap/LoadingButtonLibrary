@@ -12,3 +12,10 @@ android:
     # Specify at least one system image,
     # if you need to run emulator(s) during your tests
     - sys-img-x86-android-26
+    
+     # Support library
+    - extra-android-support
+    - extra-android-m2repository
+    
+    before_install:
+    - chmod +x gradlew
