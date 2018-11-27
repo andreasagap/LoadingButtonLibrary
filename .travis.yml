@@ -16,3 +16,5 @@ android:
      # Support library
     - extra-android-support
     - extra-android-m2repository
+script:
+- chmod +x ./gradlew
