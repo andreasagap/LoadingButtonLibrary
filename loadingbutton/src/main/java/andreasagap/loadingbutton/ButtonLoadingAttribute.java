@@ -16,6 +16,7 @@ public class ButtonLoadingAttribute {
     private String text;
 
     private int textColor;
+    private int textDisableColor;
 
     private int backgroundColor;
     private int circleColor;
@@ -121,5 +122,13 @@ public class ButtonLoadingAttribute {
 
     public void setBackgroundDisableColor(int backgroundDisableColor) {
         this.backgroundDisableColor = backgroundDisableColor;
+    }
+
+    public int getTextDisableColor() {
+        return textDisableColor;
+    }
+
+    public void setTextDisableColor(int textDisableColor) {
+        this.textDisableColor = textDisableColor;
     }
 }

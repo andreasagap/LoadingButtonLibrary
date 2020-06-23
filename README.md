@@ -43,12 +43,14 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         app:BL_backgroundColor="#9c9b9999"
+        app:BL_backgroundDisableColor="#00AFEF"
         app:BL_circleColor="#00AFEF"
         app:BL_circleColorSecond="#8000AFEF"
         app:BL_enable="true"
         app:BL_stateShow="normal"
         app:BL_text="Login"
         app:BL_textColor="#ffffff"
+        app:BL_textDisableColor="#000000"
         app:BL_textSize="16sp"/>
 
 </android.support.constraint.ConstraintLayout>
@@ -84,12 +86,15 @@ Just call ```buttonLoading.cancel();``` and the button moves to its original pos
 
 ## Configure XML
 * BL_backgroundColor
+* BL_backgroundDisableColor
 * BL_circleColor color
 * BL_circleColorSecond
 * BL_stateShow: normal,animationStart,progress,animationFinish | default value is normal
 * BL_text: text button
 * BL_textColor
+* BL_textDisableColor
 * BL_textSize
+* BL_enable
 * BL_font: address font in assets. example: file in assetst > fonts > arial.ttf ==> fonts/arial.ttf 
 
 ## Credits

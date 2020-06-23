@@ -9,6 +9,7 @@
         <attr name="BL_font" format="string" />
         <attr name="BL_text" format="string" />
         <attr name="BL_textColor" format="color" />
+        <attr name="BL_textDisableColor" format="color" />
         <attr name="BL_backgroundColor" format="color" />
         <attr name="BL_circleColor" format="color" />
         <attr name="BL_circleColorSecond" format="color" />
