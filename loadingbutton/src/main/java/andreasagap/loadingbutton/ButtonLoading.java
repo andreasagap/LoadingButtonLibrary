@@ -481,12 +481,16 @@ public class ButtonLoading extends android.support.v7.widget.AppCompatTextView {
     void animationFinish() {
 
         //remove all animation for loading
-        valueAnimatorCircleMain.removeAllListeners();
-        valueAnimatorCircleMain.end();
-        valueAnimatorCircleMain.cancel();
-        valueAnimatorCircleSecond.removeAllListeners();
-        valueAnimatorCircleSecond.end();
-        valueAnimatorCircleSecond.cancel();
+        if (valueAnimatorCircleMain != null) {
+            valueAnimatorCircleMain.removeAllListeners();
+            valueAnimatorCircleMain.end();
+            valueAnimatorCircleMain.cancel();
+        }
+        if (valueAnimatorCircleSecond != null) {
+            valueAnimatorCircleSecond.removeAllListeners();
+            valueAnimatorCircleSecond.end();
+            valueAnimatorCircleSecond.cancel();
+        }
 
         attribute.setStateShow(STATE_ANIMATION_FINISH);
 
