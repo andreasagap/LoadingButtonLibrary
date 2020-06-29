@@ -216,8 +216,11 @@ public class ButtonLoading extends android.support.v7.widget.AppCompatTextView {
 
                 canvas.getClipBounds(RectBoundCanvas);
                 RectBoundCanvas.inset(-DeviceScreenUtils.width(getContext()), -DeviceScreenUtils.height(getContext()));
-                canvas.clipRect(RectBoundCanvas, Region.Op.REPLACE);
-
+                if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
+                    canvas.clipRect(RectBoundCanvas, Region.Op.REPLACE);
+                } else {
+                    canvas.clipOutRect(RectBoundCanvas);
+                }
                 //background
                 paint.setColor(attribute.getBackgroundColor());
                 point.set(getWidth() / 2, getHeight() / 2);
