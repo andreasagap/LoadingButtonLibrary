@@ -100,6 +100,7 @@ public class ButtonLoading extends android.support.v7.widget.AppCompatTextView {
         attribute.setFont(typedArray.getString(R.styleable.ButtonLoading_BL_font));
         attribute.setText(typedArray.getString(R.styleable.ButtonLoading_BL_text));
         attribute.setTextColor(typedArray.getColor(R.styleable.ButtonLoading_BL_textColor, Color.WHITE));
+        attribute.setTextDisableColor(typedArray.getColor(R.styleable.ButtonLoading_BL_textDisableColor, Color.BLACK));
         attribute.setBackgroundColor(typedArray.getColor(R.styleable.ButtonLoading_BL_backgroundColor, Color.parseColor("#80ffffff")));
         attribute.setCircleColor(typedArray.getColor(R.styleable.ButtonLoading_BL_circleColor, Color.parseColor("#00AFEF")));
         attribute.setCircleColorSecond(typedArray.getColor(R.styleable.ButtonLoading_BL_circleColorSecond, Color.parseColor("#8000AFEF")));
@@ -301,7 +302,7 @@ public class ButtonLoading extends android.support.v7.widget.AppCompatTextView {
 
     private void paintText() {
 
-        paint.setColor(attribute.getTextColor());
+        paint.setColor(attribute.isEnable() ? attribute.getTextColor() : attribute.getTextDisableColor());
         paint.setTextSize(attribute.getTextSize());
 
         if (attribute.getFont() != null && !attribute.getFont().isEmpty()) {
@@ -480,12 +481,16 @@ public class ButtonLoading extends android.support.v7.widget.AppCompatTextView {
     void animationFinish() {
 
         //remove all animation for loading
-        valueAnimatorCircleMain.removeAllListeners();
-        valueAnimatorCircleMain.end();
-        valueAnimatorCircleMain.cancel();
-        valueAnimatorCircleSecond.removeAllListeners();
-        valueAnimatorCircleSecond.end();
-        valueAnimatorCircleSecond.cancel();
+        if (valueAnimatorCircleMain != null) {
+            valueAnimatorCircleMain.removeAllListeners();
+            valueAnimatorCircleMain.end();
+            valueAnimatorCircleMain.cancel();
+        }
+        if (valueAnimatorCircleSecond != null) {
+            valueAnimatorCircleSecond.removeAllListeners();
+            valueAnimatorCircleSecond.end();
+            valueAnimatorCircleSecond.cancel();
+        }
 
         attribute.setStateShow(STATE_ANIMATION_FINISH);
 
