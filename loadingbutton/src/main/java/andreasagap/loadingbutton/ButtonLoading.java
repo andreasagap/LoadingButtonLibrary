@@ -14,7 +14,7 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.Region;
 import android.os.Build;
-import android.support.v4.view.animation.PathInterpolatorCompat;
+import androidx.core.view.animation.PathInterpolatorCompat;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -25,7 +25,6 @@ import android.view.animation.Interpolator;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.TranslateAnimation;
 import android.widget.ImageButton;
-import android.widget.TextView;
 
 import andreasagap.loadingbutton.utils.DeviceScreenUtils;
 import andreasagap.loadingbutton.utils.FontUtils;
@@ -39,7 +38,7 @@ import static andreasagap.loadingbutton.ButtonLoadingAttribute.STATE_PROGRESS;
  * Editing by Andreas Agapitos on 17/11/2018
  */
 
-public class ButtonLoading extends android.support.v7.widget.AppCompatTextView {
+public class ButtonLoading extends androidx.appcompat.widget.AppCompatTextView {
 
     private ButtonLoadingAttribute attribute = new ButtonLoadingAttribute();
     private OnButtonLoadingListener onButtonLoadingListener;
